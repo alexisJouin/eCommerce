@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Accueil - eCommerce</title>
+    <?php include("/includes/include-files.php");  ?>
   </head>
 
   <body>

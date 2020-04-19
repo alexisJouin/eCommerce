@@ -1,12 +1,11 @@
 <html>
   <head>
-    <title>Accueil - eCommerce</title>
+    <title>Liste des articles</title>
     <?php include("/includes/include-files.php");  ?>
   </head>
 
   <body>
     <?php
-
       session_start();
       if (!isset($_SESSION['email']) || !isset($_SESSION['name']) ) {
         $name = "Utilisateur Non connecté";
@@ -19,9 +18,8 @@
       }
 
     ?>
-    <h1>Accueil</h1>
-    <h2>Bienvenue <?php echo $name; ?></h2>
-    <p><?php echo $email; ?></p>
+    <h1>Liste des articles</h1>
+
 
   </body>
 

@@ -10,7 +10,7 @@
       $dbh = new PDO('mysql:host=localhost;dbname=eCommerce', $user, $pass);
 
       //On check si le user existe et le pwd match bien
-      $stmt1 = $dbh->prepare('SELECT email, pwd, name FROM user WHERE email LIKE :email');
+      $stmt1 = $dbh->prepare('SELECT email, pwd, name, id FROM user WHERE email LIKE :email');
       $stmt1->bindParam(':email', $email);
       $stmt1->execute();
       $result = $stmt1->fetch();
@@ -18,6 +18,7 @@
       $resEmail = $result[0];
       $resPwd = $result[1];
       $resName = $result[2];
+      $userID = $result[3];
 
       if($resEmail == $email){
         if($resPwd == $pwd){
@@ -27,6 +28,7 @@
           //Création des variables session
           $_SESSION['name'] = $resName;
           $_SESSION['email'] = $resEmail;
+          $_SESSION['userID'] = $userID;
           //Redirection vers accueil
           print "Connection réussi ! Redirection ... ";
           echo "<script>alert('Connection réussi ! Redirection ...');</script>";

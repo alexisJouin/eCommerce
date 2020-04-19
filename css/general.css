@@ -1,0 +1,41 @@
+*{
+  font-family: 'Crimson Text', Georgia, Times, serif;
+	font-size: 22px;
+	line-height: 25px;
+}
+
+body{
+  background: #8000804a;
+}
+
+h1, h2, nav{
+  text-align: center;
+}
+
+h1 {
+	font-family: 'Allerta', Helvetica, Arial, sans-serif;
+	font-size: 50px;
+	line-height: 55px;
+}
+
+h2{
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+	font-size: 35px;
+	line-height: 45px;
+}
+
+nav{
+  background: purple;
+  padding: 15px;
+}
+
+nav a{
+  color: white;
+  font-size: 26px;
+  margin-right: 25px;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}

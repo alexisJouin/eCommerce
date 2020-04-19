@@ -1,3 +1,4 @@
+<?php include("/includes/include-files.php");  ?>
 <h1>Déconnection ...</h1>
 <?php
   session_start();
