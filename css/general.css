@@ -24,6 +24,18 @@ h2{
 	line-height: 45px;
 }
 
+h3{
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+	font-size: 25px;
+	line-height: 25px;
+}
+
+h4{
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+}
+
 nav{
   background: purple;
   padding: 15px;
@@ -38,4 +50,33 @@ nav a{
 
 nav a:hover{
   text-decoration: underline;
+}
+
+.img-article{
+  width: 250px;
+  height: 200px;
+  border: 3px solid white;
+}
+
+.div-article{
+  padding: 15px;
+  width: 500px;
+  height: 400px;
+  display: inline-block;
+  border: 5px solid #800080;
+  margin: 5px;
+  transition-duration: 250ms;
+}
+
+.div-article:hover{
+  cursor: pointer;
+  border: 8px solid #ff0fff;
+  width: 510px;
+  height: 410px;
+  color: #800080;
+}
+
+.container-articles{
+  text-align: center;
+  padding: 15px;
 }

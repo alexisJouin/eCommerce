@@ -1,3 +1,10 @@
+<html>
+  <head>
+    <title>Liste des articles</title>
+    <?php include("../includes/include-files.php");  ?>
+    <?php include("../lib/fonctions.php");  ?>
+  </head>
+
 <?php
 session_start();
 if (!isset($_SESSION['email']) || !isset($_SESSION['name']) ) {
@@ -7,6 +14,7 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['name']) ) {
   $userName = $_SESSION['name'];
   $email = $_SESSION['email'];
   $userID = $_SESSION['userID'];
+  include("../includes/menu-connection.php");
 }
 
 if (isset($_POST['submit'])){
@@ -21,7 +29,8 @@ if (isset($_POST['submit'])){
   //$target_file = $target_dir . basename($photo["name"]);
   //On supprime les accents et les espaces sur le nom de la photo
   $photoName = skip_accents(str_replace(' ', '', $photo["name"]));
-  $target_file = $target_dir . basename($userName . "_" . $name . "_" . $photoName);
+  $nameIMG = skip_accents(str_replace(' ', '', $name));
+  $target_file = $target_dir . basename($userName . "_" . $nameIMG . "_" . $photoName);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   // Check if image file is a actual image or fake image
@@ -95,7 +104,7 @@ if (isset($_POST['submit'])){
                 $stmt2->execute();
                 print_r("Ajout de l'article réussi ...");
                 echo "<script>alert('Ajout article réussi ! Redirection ...');</script>";
-                echo "<script>setTimeout(\"location.href = '../list-articles.php';\",1500);</script>";
+                echo "<script>setTimeout(\"location.href = '../list-articles.php';\",500);</script>";
 
                 return 1;
               }
@@ -119,15 +128,5 @@ if (isset($_POST['submit'])){
 
 }
 
-function skip_accents( $str, $charset='utf-8' ) {
-
-  $str = htmlentities( $str, ENT_NOQUOTES, $charset );
-
-  $str = preg_replace( '#&([A-za-z])(?:acute|cedil|caron|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $str );
-  $str = preg_replace( '#&([A-za-z]{2})(?:lig);#', '\1', $str );
-  $str = preg_replace( '#&[^;]+;#', '', $str );
-
-  return $str;
-}
 
  ?>
